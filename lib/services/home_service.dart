@@ -8,8 +8,7 @@ class HomeService {
     String origin,
     String destination,
   ) async {
-    print(apiKey);
-    final String url = 'https://maps.googleapis.com/maps/api/direction/json?'
+    final String url = 'https://maps.googleapis.com/maps/api/directions/json?'
         'origin=$origin&destination=$destination&key=$apiKey';
     try {
       return await http.get(

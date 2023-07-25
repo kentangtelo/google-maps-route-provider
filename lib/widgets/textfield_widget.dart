@@ -34,7 +34,9 @@ class SearchTextWidgetState extends State<SearchTextWidget> {
               color: Colors.white,
             ),
             child: TextFormField(
-              controller: homeProvider.originController,
+              controller: widget.hintText == 'Destination'
+                  ? homeProvider.destinationController
+                  : homeProvider.originController,
               decoration: InputDecoration(
                 contentPadding: const EdgeInsets.symmetric(
                   horizontal: 20,
@@ -45,7 +47,7 @@ class SearchTextWidgetState extends State<SearchTextWidget> {
                 suffixIcon: widget.hintText == 'Destination'
                     ? IconButton(
                         onPressed: () {
-                          homeProvider.testing();
+                          homeProvider.getDirectionOriginDestination();
                         },
                         icon: const Icon(Icons.search),
                       )
